@@ -1,0 +1,35 @@
+### 1. Получить все задачи (Пока пусто)
+GET http://localhost:8080/tasks
+
+### 2. Создать первую задачу (POST)
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title": "Купить хлеб",
+  "description": "Бородинский",
+  "done": false
+}
+
+### 3. Создать вторую задачу (POST)
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title": "Выучить Spring",
+  "description": "К субботе",
+  "done": false
+}
+
+### 4. Обновить первую задачу (PUT)
+PUT http://localhost:8080/tasks/1
+Content-Type: application/json
+
+{
+  "title": "Купить БАТОН",
+  "description": "Белый",
+  "done": true
+}
+
+### 5. Удалить вторую задачу (DELETE)
+DELETE http://localhost:8080/tasks/2
