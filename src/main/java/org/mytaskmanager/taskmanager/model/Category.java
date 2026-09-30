@@ -11,4 +11,5 @@ import org.mytaskmanager.taskmanager.Status;
 public class Category {
     private String name;
     private Status status;
+
 }
