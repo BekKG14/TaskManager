@@ -1,14 +1,23 @@
 package org.mytaskmanager.taskmanager.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.mytaskmanager.taskmanager.Status;
 
+import java.util.List;
+
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Category {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
-    private Status status;
+    @OneToMany(mappedBy = "category")
+    @JsonIgnoreProperties("category")
+    private List<Task> tasks;
 }
