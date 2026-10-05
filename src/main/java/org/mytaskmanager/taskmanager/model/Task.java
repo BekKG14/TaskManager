@@ -16,7 +16,6 @@ import java.util.Date;
 @Data
 @Table(name = "tasks")
 @NoArgsConstructor
-
 @AllArgsConstructor
 public class Task {
     @Id
@@ -30,4 +29,10 @@ public class Task {
     private LocalTime time;
     @Enumerated(EnumType.STRING)
     private Status status = Status.ACTIVE;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

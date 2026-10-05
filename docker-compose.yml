@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: taskmanager-postgres
+    environment:
+      POSTGRES_DB: test_db
+      POSTGRES_USER: student
+      POSTGRES_PASSWORD: chocolatefrog
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
